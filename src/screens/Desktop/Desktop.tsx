@@ -10,6 +10,22 @@ import {
 } from "../../components/ui/carousel";
 import { Github, Linkedin, Mail, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
+// 1. Defina os caminhos das imagens
+const METROLOGIC_IMAGES = [
+  "/fotos/metrologic-system/centralCadastro.jpeg",
+  "/fotos/metrologic-system/centralEstoque.jpeg",
+  "/fotos/metrologic-system/centralGestaoUsuario.jpeg",
+  "/fotos/metrologic-system/centralPedidos.jpeg",
+  "/fotos/metrologic-system/dashboard.jpeg",
+  "/fotos/metrologic-system/formAddCadastro1.jpeg",
+  "/fotos/metrologic-system/formAddCadastro2.jpeg",
+  "/fotos/metrologic-system/formAddPedido.jpeg",
+  "/fotos/metrologic-system/formAddProduto.jpeg",
+  "/fotos/metrologic-system/formConfigFiscal1.jpeg",
+  "/fotos/metrologic-system/formConfigFiscal2.jpeg",
+  "/fotos/metrologic-system/login.jpeg",
+];
+
 export const Desktop = (): JSX.Element => {
   return (
     <div className="bg-white w-full min-h-screen">
@@ -92,25 +108,40 @@ export const Desktop = (): JSX.Element => {
           {/* Project Showcase */}
           <Card className="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden border-0">
             <CardContent className="p-8">
-              <Carousel className="w-full">
+              <Carousel 
+                className="w-full"
+                opts={{ 
+                  loop: true,
+                  align: "center"
+                }}
+              >
                 <CarouselContent>
-                  <CarouselItem>
-                    <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
-                      <div className="text-center text-gray-500">
-                        <div className="w-24 h-24 bg-gray-300 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                          <div className="w-12 h-12 bg-gray-400 rounded"></div>
-                        </div>
-                        <p className="text-lg font-medium">Project Preview</p>
-                        <p className="text-sm">Screenshots coming soon</p>
+                  {METROLOGIC_IMAGES.map((img, index) => (
+                    <CarouselItem key={index} className="basis-full md:basis-1/2">
+                      <div className="p-2 transition-transform hover:scale-105 duration-300">
+                        <img
+                          src={img}
+                          alt={`Tela ${index + 1} do Metrologic System`}
+                          className="rounded-xl border border-gray-200 shadow-sm w-full h-auto max-h-[500px] object-contain bg-white p-4"
+                        />
+                        <p className="mt-3 text-center text-gray-500 font-medium">
+                          Funcionalidade {index + 1}
+                        </p>
                       </div>
-                    </div>
-                  </CarouselItem>
+                    </CarouselItem>
+                  ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-4">
-                  <ChevronLeft className="w-4 h-4" />
+                <CarouselPrevious 
+                  className="left-4 bg-white/90 hover:bg-white shadow-md border border-gray-200"
+                  variant="ghost"
+                >
+                  <ChevronLeft className="w-5 h-5" />
                 </CarouselPrevious>
-                <CarouselNext className="right-4">
-                  <ChevronRight className="w-4 h-4" />
+                <CarouselNext 
+                  className="right-4 bg-white/90 hover:bg-white shadow-md border border-gray-200"
+                  variant="ghost"
+                >
+                  <ChevronRight className="w-5 h-5" />
                 </CarouselNext>
               </Carousel>
             </CardContent>
