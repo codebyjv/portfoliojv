@@ -85,6 +85,28 @@ export const Desktop = (): JSX.Element => {
         </div>
       </section>
 
+      {/* Skills Section*/}
+      <section id="skills" className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full opacity-20 -translate-x-32 -translate-y-32"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-indigo-200 to-purple-200 rounded-full opacity-20 translate-x-48 translate-y-48"></div>
+
+        <div className="container mx-auto px-8 relative z-10">
+          <div className="text-center mb-16">
+            <Button 
+              variant="outline" 
+              className="mb-8 px-8 py-3 text-lg font-medium border-purple-300 text-purple-700 hover:bg-purple-50"
+            >
+              SKILLS
+            </Button>
+            
+            <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
+              TypeScript
+            </h2>
+          </div>
+          
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-gray-50 relative overflow-hidden">
         {/* Decorative Elements */}
