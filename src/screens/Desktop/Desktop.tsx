@@ -87,7 +87,7 @@ export const Desktop = (): JSX.Element => {
         </div>
       </section>
 
-      {/* Skills Section*/}
+      {/* Skills Section */}
       <section id="skills" className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full opacity-20 -translate-x-32 -translate-y-32"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-indigo-200 to-purple-200 rounded-full opacity-20 translate-x-48 translate-y-48"></div>
@@ -100,17 +100,16 @@ export const Desktop = (): JSX.Element => {
             >
               SKILLS
             </Button>
-            
-            <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
-              TypeScript
 
-            <div>
+            <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
+              Project: Portfolio
+            </h2>
+
+            {/* Gráfico de linguagens */}
+            <div className="mt-8">
               <RepoLanguagesChart />
             </div>
-
-            </h2>
           </div>
-
         </div>
       </section>
 
