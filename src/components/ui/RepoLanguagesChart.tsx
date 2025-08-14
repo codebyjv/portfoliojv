@@ -18,16 +18,17 @@ const RepoLanguagesChart: React.FC = () => {
   const [chartData, setChartData] = useState<ChartData<'pie'> | null>(null);
 
   useEffect(() => {
-    const repos = ['project', 'NewWLProject', 'Email-sender', 'EverGreen'];
-
     const fetchAllLanguages = async () => {
+      const repos = ['project', 'NewWLProject', 'Email-sender', 'EverGreen'];
       const combinedData: LanguageData = {};
 
       for (const repo of repos) {
         const response = await fetch(`https://api.github.com/repos/codebyjv/${repo}/languages`);
         const data: LanguageData = await response.json();
 
-        // Soma os bytes por linguagem
+        // Ignora se a resposta contém campos de erro
+        if ('message' in data || 'status' in data) continue;
+
         for (const [lang, bytes] of Object.entries(data)) {
           combinedData[lang] = (combinedData[lang] || 0) + bytes;
         }
