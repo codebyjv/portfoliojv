@@ -101,11 +101,11 @@ export const Desktop = (): JSX.Element => {
             </Button>
 
             <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
-              Graphic all languages
+              Graphic all languages (Github Repositories)
             </h2>
 
             {/* Gráfico de linguagens */}
-            <div className="mt-8">
+            <div className="mt-10">
               <RepoLanguagesChart />
             </div>
           </div>

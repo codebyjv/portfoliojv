@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Pie } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   ChartData,
   ArcElement,
   Tooltip,
   Legend,
-  ChartDataset,
+  CategoryScale,
+  LinearScale,
+  BarElement,
 } from 'chart.js';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
 // Tipagem para os dados da API
 type LanguageData = Record<string, number>;
 
 const RepoLanguagesChart: React.FC = () => {
-  const [chartData, setChartData] = useState<ChartData<'pie'> | null>(null);
+  const [chartData, setChartData] = useState<ChartData<'bar'> | null>(null);
 
   useEffect(() => {
     const fetchAllLanguages = async () => {
@@ -46,12 +49,9 @@ const RepoLanguagesChart: React.FC = () => {
           {
             label: 'Uso de Linguagens (%)',
             data: percentages,
-            backgroundColor: [
-              '#4ade80', '#60a5fa', '#facc15', '#f87171', '#a78bfa',
-              '#34d399', '#fbbf24', '#f472b6', '#818cf8', '#2dd4bf',
-            ],
+            backgroundColor: '#60a5fa',
             borderWidth: 1,
-          } as ChartDataset<'pie', number[]>,
+          },
         ],
       });
     };
@@ -61,8 +61,36 @@ const RepoLanguagesChart: React.FC = () => {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <h2 className="text-xl font-bold mb-4 text-center">Linguagens do Projeto</h2>
-      {chartData ? <Pie data={chartData} /> : <p>Carregando gráfico...</p>}
+      <p className="text-xl font-bold mb-4 text-center">All the languages used in my personal study projects, which include web and desktop (portable) tools.</p>
+      {chartData ? (
+        <Bar
+          data={chartData}
+          options={{
+            indexAxis: 'y',
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: context => `${context.parsed.x}%`,
+                },
+              },
+            },
+            scales: {
+              x: {
+                beginAtZero: true,
+                max: 100,
+                title: {
+                  display: true,
+                  text: 'Porcentagem (%)',
+                },
+              },
+            },
+          }}
+        />
+      ) : (
+        <p>Carregando gráfico...</p>
+      )}
     </div>
   );
 };
