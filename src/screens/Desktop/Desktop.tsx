@@ -10,7 +10,7 @@ import {
 } from "../../components/ui/carousel";
 import { Github, Linkedin, Mail, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
-import RepoLanguagesChart from "../../components/ui/RepoLanguagesChart"
+import RepoLanguagesChart from "../../components/ui/RepoLanguagesChart";
 
 // 1. Defina os caminhos das imagens
 const METROLOGIC_IMAGES = [
@@ -102,7 +102,7 @@ export const Desktop = (): JSX.Element => {
             </Button>
 
             <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
-              Project: Portfolio
+              Graphic all languages
             </h2>
 
             {/* Gráfico de linguagens */}

@@ -18,14 +18,26 @@ const RepoLanguagesChart: React.FC = () => {
   const [chartData, setChartData] = useState<ChartData<'pie'> | null>(null);
 
   useEffect(() => {
-    const fetchLanguages = async () => {
-      const response = await fetch('https://api.github.com/repos/codebyjv/project/languages');
-      const data: LanguageData = await response.json();
+    const repos = ['project', 'NewWLProject', 'Email-sender', 'EverGreen'];
 
-      const total = Object.values(data).reduce((sum, bytes) => sum + bytes, 0);
+    const fetchAllLanguages = async () => {
+      const combinedData: LanguageData = {};
 
-      const labels = Object.keys(data);
-      const percentages = Object.values(data).map(bytes => parseFloat(((bytes / total) * 100).toFixed(2)));
+      for (const repo of repos) {
+        const response = await fetch(`https://api.github.com/repos/codebyjv/${repo}/languages`);
+        const data: LanguageData = await response.json();
+
+        // Soma os bytes por linguagem
+        for (const [lang, bytes] of Object.entries(data)) {
+          combinedData[lang] = (combinedData[lang] || 0) + bytes;
+        }
+      }
+
+      const total = Object.values(combinedData).reduce((sum, bytes) => sum + bytes, 0);
+      const labels = Object.keys(combinedData);
+      const percentages = Object.values(combinedData).map(bytes =>
+        parseFloat(((bytes / total) * 100).toFixed(2))
+      );
 
       setChartData({
         labels,
@@ -34,11 +46,8 @@ const RepoLanguagesChart: React.FC = () => {
             label: 'Uso de Linguagens (%)',
             data: percentages,
             backgroundColor: [
-              '#4ade80', // verde
-              '#60a5fa', // azul
-              '#facc15', // amarelo
-              '#f87171', // vermelho
-              '#a78bfa', // roxo
+              '#4ade80', '#60a5fa', '#facc15', '#f87171', '#a78bfa',
+              '#34d399', '#fbbf24', '#f472b6', '#818cf8', '#2dd4bf',
             ],
             borderWidth: 1,
           } as ChartDataset<'pie', number[]>,
@@ -46,7 +55,7 @@ const RepoLanguagesChart: React.FC = () => {
       });
     };
 
-    fetchLanguages();
+    fetchAllLanguages();
   }, []);
 
   return (
