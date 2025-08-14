@@ -13,7 +13,6 @@ import { Github, Linkedin, Mail, MessageCircle, ChevronLeft, ChevronRight } from
 import LanguageProgressBars from "../../components/ui/LanguageProgressBars";
 import { ImageModal } from "../../components/ui/ImageModal";
 
-  // 1. Defina os caminhos das imagens
 const METROLOGIC_IMAGES = [
   "/fotos/metrologic-system/login.jpeg",
   "/fotos/metrologic-system/dashboard.jpeg",
@@ -26,6 +25,11 @@ const METROLOGIC_IMAGES = [
   "/fotos/metrologic-system/formAddPedido.jpeg",
   "/fotos/metrologic-system/formConfigFiscal1.jpeg",
   "/fotos/metrologic-system/formConfigFiscal2.jpeg",
+];
+
+const EMAIL_SENDER_IMAGES = [
+  "/fotos/email_sender/interface(claro).png",
+  "/fotos/email_sender/interface(escuro).png",
 ];
 
 export const Desktop = (): JSX.Element => {
@@ -123,6 +127,7 @@ export const Desktop = (): JSX.Element => {
         <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full opacity-20 -translate-x-32 -translate-y-32"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-indigo-200 to-purple-200 rounded-full opacity-20 translate-x-48 translate-y-48"></div>
         
+        {/* Project: Metrologic System (in development) */}
         <div className="container mx-auto px-8 relative z-10">
           <div className="text-center mb-16">
             <Button 
@@ -198,6 +203,76 @@ export const Desktop = (): JSX.Element => {
               
               <p>
                 The product will manage the inventory completely, from sold products to internal office items, stockroom, etc. It should manage sales with real-time inventory control (preventing sales without stock or without prior notice). Separate modules will include the fiscal part (issuing NF-e, NFS-e) and the quality calibration part, which involves services, certificates, protocols, traceability, and all necessary documentation for the specific niche.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Project: Email Sender */}
+        <div className="container mx-auto px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
+              Email Sender
+            </h2>
+          </div>
+
+          {/* Project Showcase */}
+          <Card className="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden border-0">
+            <CardContent className="p-8">
+              <Carousel 
+                className="w-full"
+                opts={{ 
+                  loop: true,
+                  align: "center"
+                }}
+              >
+                <CarouselContent>
+                  {EMAIL_SENDER_IMAGES.map((img, index) => (
+                    <CarouselItem key={index} className="basis-full md:basis-1/2">
+                      <div className="p-2 transition-transform hover:scale-105 duration-300">
+                        <img
+                          src={img}
+                          alt={`Tela ${index + 1} do Email Sender`}
+                          className="rounded-xl border border-gray-200 shadow-sm w-full h-auto max-h-[500px] object-contain bg-white p-4"
+                          onClick={() => setSelectedImage(img)}
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious 
+                  className="left-4 bg-white/90 hover:bg-white shadow-md border border-gray-200"
+                  variant="ghost"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </CarouselPrevious>
+                <CarouselNext 
+                  className="right-4 bg-white/90 hover:bg-white shadow-md border border-gray-200"
+                  variant="ghost"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </CarouselNext>
+              </Carousel>
+
+              {selectedImage && (
+                <ImageModal src={selectedImage} onClose={() => setSelectedImage(null)} />
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Project Description */}
+          <div className="max-w-6xl mx-auto mt-12">
+            <h3 className="text-3xl font-light italic text-gray-800 mb-6">
+              About: Email Sender
+            </h3>
+            
+            <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
+              <p className="mb-6">
+                This project was created for internal use at my company (due to a high-volume submission process) and for study/learning purposes.
+              </p>
+              
+              <p className="mb-6">
+                The tool is fully functional and created in Python.
               </p>
             </div>
           </div>
