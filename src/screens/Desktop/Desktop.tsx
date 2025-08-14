@@ -15,23 +15,22 @@ import { ImageModal } from "../../components/ui/ImageModal";
 
   // 1. Defina os caminhos das imagens
 const METROLOGIC_IMAGES = [
-  "/fotos/metrologic-system/centralCadastro.jpeg",
-  "/fotos/metrologic-system/centralEstoque.jpeg",
-  "/fotos/metrologic-system/centralGestaoUsuario.jpeg",
-  "/fotos/metrologic-system/centralPedidos.jpeg",
+  "/fotos/metrologic-system/login.jpeg",
   "/fotos/metrologic-system/dashboard.jpeg",
+  "/fotos/metrologic-system/centralCadastro.jpeg",
   "/fotos/metrologic-system/formAddCadastro1.jpeg",
-  "/fotos/metrologic-system/formAddCadastro2.jpeg",
-  "/fotos/metrologic-system/formAddPedido.jpeg",
+  "/fotos/metrologic-system/centralEstoque.jpeg",
   "/fotos/metrologic-system/formAddProduto.jpeg",
+  "/fotos/metrologic-system/centralGestaoUsuarios.jpeg",
+  "/fotos/metrologic-system/centralPedidos.jpeg",
+  "/fotos/metrologic-system/formAddPedido.jpeg",
   "/fotos/metrologic-system/formConfigFiscal1.jpeg",
   "/fotos/metrologic-system/formConfigFiscal2.jpeg",
-  "/fotos/metrologic-system/login.jpeg",
 ];
 
 export const Desktop = (): JSX.Element => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  
+
   return (
     <div className="bg-white w-full min-h-screen">
       {/* Hero Section */}
@@ -158,9 +157,6 @@ export const Desktop = (): JSX.Element => {
                           className="rounded-xl border border-gray-200 shadow-sm w-full h-auto max-h-[500px] object-contain bg-white p-4"
                           onClick={() => setSelectedImage(img)}
                         />
-                        <p className="mt-3 text-center text-gray-500 font-medium">
-                          Screens {index + 1}
-                        </p>
                       </div>
                     </CarouselItem>
                   ))}
@@ -260,7 +256,7 @@ export const Desktop = (): JSX.Element => {
             </a>
             
             <a href="https://www.linkedin.com/in/joaov-sant/" className="group">
-              <div className="w-26 h-26 bg-white rounded-full shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+              <div className="w-28 h-28 bg-white rounded-full shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                 <Linkedin className="w-11 h-11 text-blue-600" />
               </div>
             </a>
