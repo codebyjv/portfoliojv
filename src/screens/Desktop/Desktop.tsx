@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import {
@@ -10,8 +11,9 @@ import {
 import { Github, Linkedin, Mail, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
 import LanguageProgressBars from "../../components/ui/LanguageProgressBars";
+import { ImageModal } from "../../components/ui/ImageModal";
 
-// 1. Defina os caminhos das imagens
+  // 1. Defina os caminhos das imagens
 const METROLOGIC_IMAGES = [
   "/fotos/metrologic-system/centralCadastro.jpeg",
   "/fotos/metrologic-system/centralEstoque.jpeg",
@@ -28,6 +30,8 @@ const METROLOGIC_IMAGES = [
 ];
 
 export const Desktop = (): JSX.Element => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
   return (
     <div className="bg-white w-full min-h-screen">
       {/* Hero Section */}
@@ -101,8 +105,10 @@ export const Desktop = (): JSX.Element => {
             </Button>
 
             <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
-              Graphic all languages (Github Repositories)
+              All languages used in projects (Github Repositories)
             </h2>
+
+            <p> All the languages used in my personal study projects, which include web and desktop (portable) tools.</p>
 
             {/* Gráfico de linguagens */}
             <div className="mt-10">
@@ -150,9 +156,10 @@ export const Desktop = (): JSX.Element => {
                           src={img}
                           alt={`Tela ${index + 1} do Metrologic System`}
                           className="rounded-xl border border-gray-200 shadow-sm w-full h-auto max-h-[500px] object-contain bg-white p-4"
+                          onClick={() => setSelectedImage(img)}
                         />
                         <p className="mt-3 text-center text-gray-500 font-medium">
-                          Funcionalidade {index + 1}
+                          Screens {index + 1}
                         </p>
                       </div>
                     </CarouselItem>
@@ -171,6 +178,10 @@ export const Desktop = (): JSX.Element => {
                   <ChevronRight className="w-5 h-5" />
                 </CarouselNext>
               </Carousel>
+
+              {selectedImage && (
+                <ImageModal src={selectedImage} onClose={() => setSelectedImage(null)} />
+              )}
             </CardContent>
           </Card>
 
