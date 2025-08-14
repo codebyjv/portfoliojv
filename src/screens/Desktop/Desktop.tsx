@@ -10,6 +10,8 @@ import {
 } from "../../components/ui/carousel";
 import { Github, Linkedin, Mail, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
+import RepoLanguagesChart from "../../components/ui/RepoLanguagesChart"
+
 // 1. Defina os caminhos das imagens
 const METROLOGIC_IMAGES = [
   "/fotos/metrologic-system/centralCadastro.jpeg",
@@ -101,9 +103,14 @@ export const Desktop = (): JSX.Element => {
             
             <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
               TypeScript
+
+            <div>
+              <RepoLanguagesChart />
+            </div>
+
             </h2>
           </div>
-          
+
         </div>
       </section>
 
