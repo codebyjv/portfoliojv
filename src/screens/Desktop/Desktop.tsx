@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import {
@@ -12,6 +12,8 @@ import { Github, Linkedin, Mail, MessageCircle, ChevronLeft, ChevronRight } from
 
 import LanguageProgressBars from "../../components/ui/LanguageProgressBars";
 import { ImageModal } from "../../components/ui/ImageModal";
+
+import GradientShift from "../../components/ui/GradientShift";
 
 const METROLOGIC_IMAGES = [
   "/fotos/metrologic-system/login.jpeg",
@@ -32,18 +34,6 @@ const EMAIL_SENDER_IMAGES = [
   "/fotos/email_sender/interface(escuro).png",
 ];
 
-useEffect(() => {
-  const handleMouseMove = (e: MouseEvent) => {
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-    document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #6a11cb, #2575fc)`;
-  };
-
-  document.addEventListener('mousemove', handleMouseMove);
-  return () => document.removeEventListener('mousemove', handleMouseMove);
-}, []);
-
-
 export const Desktop = (): JSX.Element => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -53,7 +43,7 @@ export const Desktop = (): JSX.Element => {
       <section className="relative h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center overflow-hidden">
         {/* Background Pattern */}
         <div className={`absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20`}></div>
-        
+          <GradientShift />
         {/* Content */}
         <div className="relative z-10 text-center text-white px-8 max-w-4xl">
           <p className="text-2xl md:text-3xl font-light italic mb-4 text-purple-200">
