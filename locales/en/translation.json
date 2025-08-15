@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "greeting": "*Hello, world!*",
+    "name": "I'm João Vitor",
+    "description": "Junior frontend developer, I am an enthusiast in the programming field who has always liked creativity.",
+    "projects": "PROJECTS",
+    "about": "ABOUT ME",
+    "contact": "CONTACT"
+  },
+  "skills": {
+    "button": "SKILLS",
+    "title": "All languages used in projects (Github Repositories)",
+    "description": "All the languages used in my personal study projects, which include web and desktop (portable) tools."
+  },
+  "projects": {
+    "button": "PROJECTS",
+    "metrologic": {
+      "title": "Metrologic System (in development)",
+      "about": "About: Metrologic System",
+      "p1": "Project focused on business management in the standard weights niche.. The goal of the product is to make the workflow agile, simple, and primarily correct.",
+      "p2": "It is currently under development as I am developing the entire product alone and trying out some backend attempts to deliver something as complete as possible.",
+      "p3": "The product will manage the inventory completely, from sold products to internal office items, stockroom, etc. It should manage sales with real-time inventory control (preventing sales without stock or without prior notice). Separate modules will include the fiscal part (issuing NF-e, NFS-e) and the quality calibration part, which involves services, certificates, protocols, traceability, and all necessary documentation for the specific niche."
+    },
+    "emailSender": {
+      "title": "Email Sender",
+      "about": "About: Email Sender",
+      "p1": "This project was created for internal use at my company (due to a high-volume submission process) and for study/learning purposes.",
+      "p2": "The tool is fully functional and created in Python."
+    }
+  },
+  "about": {
+    "button": "ABOUT ME",
+    "description": "A beginner in the field of programming and product development, I have a degree in Analysis and System Development (ADS). Since I was young, I have been interested in areas related to art, creativity, and entertainment. I have some knowledge in Photoshop, Illustrator, and Premiere due to my mild curiosity in the field. I worked as a freelance designer for a period of 1-2 years, creating artwork, visual identity, video editing, and web creatives. Since then, I have been trying to combine programming with something I feel good doing."
+  },
+  "contact": {
+    "button": "CONTACT"
+  }
+}

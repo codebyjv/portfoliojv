@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "greeting": "*Olá, mundo!*",
+    "name": "Sou João Vitor",
+    "description": "Desenvolvedor frontend júnior, sou um entusiasta da programação que sempre gostou de criatividade.",
+    "projects": "PROJETOS",
+    "about": "SOBRE MIM",
+    "contact": "CONTATO"
+  },
+  "skills": {
+    "button": "HABILIDADES",
+    "title": "Todas as linguagens usadas nos projetos (Repositórios do Github)",
+    "description": "Todas as linguagens utilizadas nos meus projetos de estudo pessoal, incluindo ferramentas web e desktop (portáteis)."
+  },
+  "projects": {
+    "metrologic": {
+      "title": "Sistema Metrológico (em desenvolvimento)",
+      "about": "Sobre: Sistema Metrológico",
+      "p1": "Projeto focado em gestão empresarial no nicho de pesos padrão. O objetivo do produto é tornar o fluxo de trabalho ágil, simples e, principalmente, correto.",
+      "p2": "Atualmente, ele está em desenvolvimento, pois estou desenvolvendo o produto inteiro sozinho e testando algumas tentativas de backend para entregar algo o mais completo possível.",
+      "p3": "O produto gerenciará o estoque completamente, desde os produtos vendidos até os itens internos do escritório, almoxarifado, etc. Ele deverá gerenciar as vendas com controle de estoque em tempo real (evitando vendas sem estoque ou sem aviso prévio). Módulos separados incluirão a parte fiscal (emissão de NF-e, NFS-e) e a parte de calibração de qualidade, que envolve serviços, certificados, protocolos, rastreabilidade e toda a documentação necessária para o nicho específico."
+    },
+    "emailSender": {
+      "title": "Enviador de E-mails",
+      "about": "Sobre: Enviador de E-mails",
+      "p1": "Este projeto foi criado para uso interno na minha empresa (devido a um alto volume de envios) e para fins de estudo/aprendizagem.",
+      "p2": "A ferramenta é totalmente funcional e criada em Python."
+    }
+  },
+  "about": {
+    "button": "SOBRE MIM",
+    "description": "Iniciante na área de programação e desenvolvimento de produtos, sou formado em Análise e Desenvolvimento de Sistemas (ADS). Desde jovem, me interesso por áreas relacionadas à arte, criatividade e entretenimento. Possuo algum conhecimento em Photoshop, Illustrator e Premiere devido à minha leve curiosidade pela área. Trabalhei como designer freelancer por um período de 1 a 2 anos, criando artes, identidade visual, edição de vídeo e conteúdo para web. Desde então, tenho buscado conciliar programação com algo que me faça sentir bem."
+  }
+}
