@@ -1,9 +1,16 @@
 import { useEffect, useRef } from "react";
 import { Github, Linkedin } from "lucide-react"; // ajuste conforme seu projeto
 import { Button } from "../../components/ui/button";
+import { useTranslation } from "react-i18next";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useTranslation();
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "pt" : "en");
+  };
+  const { i18n } = useTranslation();
+
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -30,13 +37,27 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-8 max-w-4xl">
         <p className="text-2xl md:text-3xl font-light italic mb-4 text-purple-200">
-          *Hello, world!*
+          {t("hero.greeting")}
         </p>
-        <h1 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-          I'm João Vitor
-        </h1>
+
+        {/* Wrapper para o título + botão */}
+        <div className="relative inline-block">
+            <h1 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+            {t("hero.name")}
+            </h1>
+
+            {/* Botão de idioma*/}
+            <div className="absolute -top-6 right-0">
+                <button
+                    onClick={toggleLanguage}
+                    className="px-4 py-2 bg-white/10 text-white rounded-md hover:bg-white/20 transition-all backdrop-blur-sm"
+                >
+                    {i18n.language === "en" ? "PT-BR" : "EN"}
+                </button>
+            </div>
+        </div>
         <p className="text-xl md:text-2xl font-light italic max-w-3xl mx-auto leading-relaxed text-gray-200">
-          Junior frontend developer, I am an enthusiast in the programming field who has always liked creativity.
+          {t("hero.description")}
         </p>
 
         {/* Social Links */}
@@ -57,21 +78,21 @@ export default function HeroSection() {
           className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 px-8 py-3 text-lg font-medium"
           onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
         >
-          PROJECTS
+          {t("hero.projects")}
         </Button>
         <Button
           variant="outline"
           className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 px-8 py-3 text-lg font-medium"
           onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
         >
-          ABOUT ME
+          {t("hero.about")}
         </Button>
         <Button
           variant="outline"
           className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 px-8 py-3 text-lg font-medium"
           onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
         >
-          CONTACT
+          {t("hero.contact")}
         </Button>
       </div>
     </section>
