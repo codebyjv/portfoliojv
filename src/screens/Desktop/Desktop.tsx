@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import {
@@ -31,6 +31,18 @@ const EMAIL_SENDER_IMAGES = [
   "/fotos/email_sender/interface(claro).png",
   "/fotos/email_sender/interface(escuro).png",
 ];
+
+useEffect(() => {
+  const handleMouseMove = (e: MouseEvent) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #6a11cb, #2575fc)`;
+  };
+
+  document.addEventListener('mousemove', handleMouseMove);
+  return () => document.removeEventListener('mousemove', handleMouseMove);
+}, []);
+
 
 export const Desktop = (): JSX.Element => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);

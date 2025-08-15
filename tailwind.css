@@ -87,5 +87,9 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle at center, #6a11cb, #2575fc);
+    transition: background 0.3s ease;
   }
 }
