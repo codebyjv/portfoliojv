@@ -9,7 +9,7 @@ export default function GradientShift() {
       const y = e.clientY / window.innerHeight;
 
       if (sectionRef.current) {
-        sectionRef.current.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #6a11cb, #2575fc)`;
+        sectionRef.current.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #2575fc, #6a11cb)`;
       }
     };
 
