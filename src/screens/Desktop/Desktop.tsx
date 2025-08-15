@@ -156,26 +156,20 @@ export const Desktop = (): JSX.Element => {
             </h3>
 
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-              <p className="mb-6">
-                {t("projects.metrologic.p1")}
-              </p>
+              <p className="mb-6">{t("projects.metrologic.p1")}</p>
 
-              <p className="mb-6">
-                {t("projects.metrologic.p2")}
-              </p>
+              <p className="mb-6">{t("projects.metrologic.p2")}</p>
 
-              <p>
-                {t("projects.metrologic.p3")}
-              </p>
+              <p>{t("projects.metrologic.p3")}</p>
             </div>
           </div>
         </div>
 
         {/* Project: Email Sender */}
-        <div className="container mx-auto px-8 relative z-10">
+        <div className="container mx-auto px-8 relative z-10 margin-top-25">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold italic text-gray-800 mb-4">
-              {t("emailSender.title")}
+              {t("projects.emailSender.title")}
             </h2>
           </div>
 
@@ -232,17 +226,13 @@ export const Desktop = (): JSX.Element => {
           {/* Project Description */}
           <div className="max-w-6xl mx-auto mt-12">
             <h3 className="text-3xl font-light italic text-gray-800 mb-6">
-              {t("emailSender.about")}
+              {t("projects.emailSender.about")}
             </h3>
 
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-              <p className="mb-6">
-                {t("emailSender.p1")}
-              </p>
+              <p className="mb-6">{t("projects.emailSender.p1")}</p>
 
-              <p className="mb-6">
-                {t("emailSender.p2")}
-              </p>
+              <p className="mb-6">{t("projects.emailSender.p2")}</p>
             </div>
           </div>
         </div>
